@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-deep-olive: #34422D;
+  --color-olive: #68734B;
+  --color-sage: #AEB997;
+  --color-cream: #F4F0E6;
+  --color-warm-white: #FFFDF8;
+  --color-latte: #D8B98C;
+  --color-espresso: #2B231E;
+  --color-muted-text: #6B675F;
+  --color-border: #E3DEC3;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-espresso);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessibility Focus Ring */
+:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 16px;
+  background: var(--color-deep-olive);
+  color: var(--color-warm-white);
+  padding: 8px 16px;
+  z-index: 100;
+  border-radius: 8px;
+  transition: top 0.2s ease;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* Hide scrollbar for category pills on mobile while allowing swipe */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

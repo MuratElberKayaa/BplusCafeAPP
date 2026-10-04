@@ -1,0 +1,56 @@
+# ==========================================
+# B+ Wellness Café — Repository Ignore Rules
+# ==========================================
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Build outputs
+dist/
+build/
+
+# Expo / React Native
+.expo/
+.expo-shared/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Test / coverage
+coverage/
+
+# General cache
+.cache/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary Antigravity / validation workspace
+scratch/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
