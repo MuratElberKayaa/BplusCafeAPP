@@ -76,9 +76,11 @@ export const HeroSection: React.FC = () => {
               {/* Main Editorial Image Container */}
               <div className="relative rounded-2xl overflow-hidden shadow-elevated border border-bplus-border/60 bg-bplus-warmWhite">
                 <img
-                  src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=1200&auto=format&fit=crop"
+                  src="/images/demo/hero-coldbrew.webp"
                   alt="B+ Artisanal Single-Origin Cold Brew cam bardakta, doğal sabah ışığında traverten zemin üzerinde"
-                  className="w-full h-[380px] sm:h-[460px] lg:h-[500px] object-cover hover:scale-[1.02] transition-transform duration-700 ease-out"
+                  width={1200}
+                  height={800}
+                  className="w-full h-[380px] sm:h-[460px] lg:h-[500px] aspect-[3/2] object-cover hover:scale-[1.02] transition-transform duration-700 ease-out"
                 />
 
                 {/* Editorial Floating Card */}

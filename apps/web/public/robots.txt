@@ -1,0 +1,8 @@
+# B+ Wellness Café — Preview Environment
+# Crawling permitted so search engine bots can read the HTML <meta name="robots" content="noindex, nofollow"> directive.
+# Production domain TBD — No production sitemap declared.
+User-agent: *
+Allow: /
+
+
+

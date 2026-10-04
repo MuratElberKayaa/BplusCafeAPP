@@ -19,22 +19,22 @@ export const ContactSection: React.FC = () => {
     {
       id: '1',
       title: 'Matcha Hazırlığı',
-      img: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=400&auto=format&fit=crop',
+      img: '/images/demo/matcha-latte.webp',
     },
     {
       id: '2',
       title: 'Kavrulmuş Çekirdekler',
-      img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=400&auto=format&fit=crop',
+      img: '/images/demo/v60-pourover.webp',
     },
     {
       id: '3',
       title: 'Yeşil Kase Sunumu',
-      img: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=400&auto=format&fit=crop',
+      img: '/images/demo/spirulina-bowl.webp',
     },
     {
       id: '4',
       title: 'Güneşli Kafe Köşesi',
-      img: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=400&auto=format&fit=crop',
+      img: '/images/demo/insta-cafe.webp',
     },
   ];
 

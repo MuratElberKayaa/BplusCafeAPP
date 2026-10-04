@@ -16,9 +16,11 @@ export const ConceptSection: React.FC = () => {
           <div className="lg:col-span-5 relative order-2 lg:order-1">
             <div className="relative rounded-2xl overflow-hidden shadow-elevated border border-bplus-border/70 bg-bplus-warmWhite">
               <img
-                src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=900&auto=format&fit=crop"
+                src="/images/demo/concept-roasting.webp"
                 alt="Mineiro Coffee kavurma çekirdekleri ve seremoniyel matcha kasesi artisanal kompozisyonu"
-                className="w-full h-[400px] sm:h-[480px] object-cover"
+                width={900}
+                height={600}
+                className="w-full h-[400px] sm:h-[480px] aspect-[3/2] object-cover"
               />
 
               {/* Minimalist Botanical Badge Tag */}

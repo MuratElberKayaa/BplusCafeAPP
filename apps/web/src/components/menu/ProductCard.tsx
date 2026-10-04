@@ -11,19 +11,8 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProduct }) => {
   return (
-    <article
-      onClick={() => onSelectProduct(product)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          onSelectProduct(product);
-        }
-      }}
-      tabIndex={0}
-      role="button"
-      aria-haspopup="dialog"
-      aria-label={`${product.name} detaylarını görüntüle, Fiyat: ${product.priceFormatted}`}
-      className="group relative bg-bplus-warmWhite rounded-2xl border border-bplus-border/80 overflow-hidden shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-bplus-olive"
+    <div
+      className="group relative bg-bplus-warmWhite rounded-2xl border border-bplus-border/80 overflow-hidden shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
     >
       <div>
         {/* Product Image Frame */}
@@ -59,17 +48,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onSelectProdu
         </div>
       </div>
 
-      {/* Card Footer: Price & Inspect CTA */}
+      {/* Card Footer: Price & Inspect CTA Button */}
       <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-bplus-border/40 flex items-center justify-between">
         <div className="text-sm font-bold text-bplus-deepOlive">
           {product.priceFormatted}
         </div>
-        <div className="inline-flex items-center gap-1 text-xs font-bold text-bplus-olive group-hover:text-bplus-deepOlive transition-colors">
+        <button
+          type="button"
+          onClick={() => onSelectProduct(product)}
+          aria-haspopup="dialog"
+          aria-label={`${product.name} detaylarını görüntüle`}
+          className="inline-flex items-center gap-1 text-xs font-bold text-bplus-olive hover:text-bplus-deepOlive transition-colors px-3 py-1.5 rounded-full hover:bg-bplus-cream/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-bplus-olive"
+        >
           <span>Detaylı Gör</span>
           <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-        </div>
+        </button>
       </div>
-    </article>
+    </div>
   );
 };
 

@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
 
-            <div className="text-[11px] text-bplus-sage/70 mt-6 md:mt-0 md:text-right">
+            <div className="text-[11px] text-bplus-cream/90 mt-6 md:mt-0 md:text-right">
               <div>İstanbul / Türkiye</div>
               <div>Kadıköy Moda (Örnek Şube)</div>
             </div>
@@ -86,11 +86,11 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Legal Disclaimer & Copyright */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-bplus-sage/70">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-bplus-cream/90">
           <div className="text-center md:text-left max-w-2xl text-[11px] leading-relaxed">
-            <strong>ZORUNLU PROTOTİP BİLDİRİMİ:</strong> Bu çalışma demo amaçlıdır. Web sitesinde yer alan fiyatlar, çalışma saatleri, şube adresleri ve ürün bilgileri prototip sunumu niteliğindedir. Gerçek sipariş veya ödeme alınmaz.
+            <strong className="text-bplus-warmWhite">ZORUNLU PROTOTİP BİLDİRİMİ:</strong> Bu çalışma demo amaçlıdır. Web sitesinde yer alan fiyatlar, çalışma saatleri, şube adresleri ve ürün bilgileri prototip sunumu niteliğindedir. Gerçek sipariş veya ödeme alınmaz.
           </div>
-          <div className="shrink-0 text-center md:text-right text-[11px]">
+          <div className="shrink-0 text-center md:text-right text-[11px] text-bplus-cream/90">
             © 2026 B+ Wellness Café by Mineiro Coffee. Tüm hakları saklıdır.
           </div>
         </div>
