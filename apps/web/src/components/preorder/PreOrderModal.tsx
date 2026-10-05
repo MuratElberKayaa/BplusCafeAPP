@@ -226,11 +226,11 @@ export const PreOrderModal: React.FC<PreOrderModalProps> = ({
                   <span className="text-bplus-mutedText">Örnek Şube:</span>
                   <span className="font-semibold text-bplus-deepOlive flex items-center gap-1">
                     <Store className="w-3.5 h-3.5 text-bplus-olive" />
-                    Kadıköy Moda (Örnek Şube / TBD)
+                    Mecidiyeköy Şubesi (Büyükdere Cd., Şişli)
                   </span>
                 </div>
                 <div className="text-[10px] text-bplus-mutedText italic">
-                  * Onaylı şube adresi henüz paylaşılmamıştır. Kadıköy / Moda yalnızca demo lokasyon olarak kullanılmaktadır.
+                  * Mecidiyeköy Mahallesi, Büyükdere Cd., 34394 Şişli/İstanbul
                 </div>
                 <div className="flex justify-between pt-2 border-t border-bplus-border/60 text-sm font-bold text-bplus-deepOlive">
                   <span>Demo Tutar:</span>

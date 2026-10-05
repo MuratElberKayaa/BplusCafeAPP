@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
@@ -8,6 +10,7 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenPreOrder }) => {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const mobileDrawerRef = useRef<HTMLDivElement>(null);
@@ -73,11 +76,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPreOrder }) => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { label: 'Konsept', href: '#concept' },
-    { label: 'Menü', href: '#menu' },
-    { label: 'AI Barista', href: '#ai-barista' },
-    { label: 'Lokasyon', href: '#location' },
-    { label: 'İletişim', href: '#contact' },
+    { label: 'Ana Sayfa', href: '/' },
+    { label: 'Menü', href: '/menu' },
+    { label: 'Konsept', href: '/concept' },
+    { label: 'Şubelerimiz', href: '/location' },
+    { label: 'İletişim', href: '/contact' },
   ];
 
   const handleLinkClick = () => {
@@ -95,14 +98,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPreOrder }) => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="flex items-center gap-2.5 text-bplus-deepOlive focus-visible:ring-2 focus-visible:ring-bplus-olive rounded-md"
           aria-label="B+ Wellness Café Ana Sayfası"
         >
-          <div className="w-9 h-9 rounded-full bg-bplus-deepOlive text-bplus-warmWhite flex items-center justify-center font-bold text-lg tracking-tighter shadow-sm">
-            B+
-          </div>
+          <img
+            src="/images/demo/brand-logo.webp"
+            alt="B+ Logo"
+            width={40}
+            height={40}
+            className="w-10 h-10 rounded-full object-cover shadow-sm border border-bplus-sage/40"
+          />
           <div className="flex flex-col">
             <span className="font-bold text-base tracking-tight text-bplus-deepOlive leading-tight">
               B+ Wellness Café
@@ -111,30 +118,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPreOrder }) => {
               by Mineiro Coffee
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav aria-label="Ana Gezinme" className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-bplus-espresso/80 hover:text-bplus-deepOlive transition-colors py-1 relative group"
-            >
-              {link.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-bplus-olive transition-all duration-200 group-hover:w-full" />
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium transition-colors py-1 relative group ${
+                  isActive
+                    ? 'text-bplus-deepOlive font-bold'
+                    : 'text-bplus-espresso/80 hover:text-bplus-deepOlive'
+                }`}
+              >
+                {link.label}
+                <span
+                  className={`absolute bottom-0 left-0 h-0.5 bg-bplus-olive transition-all duration-200 ${
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Action Button & Mobile Hamburger */}
         <div className="flex items-center gap-3">
-          <a
-            href="#menu"
+          <Link
+            href="/menu"
             className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold rounded-full bg-bplus-deepOlive text-bplus-warmWhite hover:bg-bplus-olive active:scale-[0.98] transition-all shadow-sm"
           >
             Menüyü Keşfet
-          </a>
+          </Link>
 
           <button
             type="button"
@@ -175,26 +193,33 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPreOrder }) => {
                 Gezinme
               </div>
               <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={handleLinkClick}
-                    className="text-lg font-medium text-bplus-warmWhite hover:text-bplus-sage transition-colors py-1"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={handleLinkClick}
+                      className={`text-lg font-medium transition-colors py-1 ${
+                        isActive
+                          ? 'text-bplus-sage font-bold pl-2 border-l-2 border-bplus-sage'
+                          : 'text-bplus-warmWhite hover:text-bplus-sage'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
               </nav>
 
               <div className="pt-4 border-t border-bplus-sage/30 flex flex-col gap-3">
-                <a
-                  href="#menu"
+                <Link
+                  href="/menu"
                   onClick={handleLinkClick}
-                  className="w-full text-center py-3 rounded-full bg-bplus-sage text-bplus-deepOlive font-bold text-sm"
+                  className="w-full text-center py-3 rounded-full bg-bplus-sage text-bplus-deepOlive font-bold text-sm hover:bg-bplus-latte transition-colors"
                 >
                   Menüyü Keşfet
-                </a>
+                </Link>
                 <button
                   type="button"
                   onClick={() => {
@@ -209,7 +234,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPreOrder }) => {
             </div>
 
             <div className="text-[11px] text-bplus-sage/70 pt-6 border-t border-bplus-sage/20">
-              <p>Onaylı şube adresi henüz paylaşılmamıştır. Kadıköy / Moda yalnızca demo lokasyon olarak kullanılmaktadır.</p>
+              <p>Pilot Şube: Mecidiyeköy Mahallesi, Büyükdere Cd., 34394 Şişli/İstanbul</p>
               <p className="mt-1">Prototip Modu — Bu prototipte gerçek sipariş alınmaz.</p>
             </div>
           </div>

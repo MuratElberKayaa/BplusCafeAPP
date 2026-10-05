@@ -8,7 +8,12 @@ export const LocationSection: React.FC = () => {
 
   const handleRouteClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    setMapMessage('Örnek harita rotası simüle edildi (Harici Google Maps API bağlı değildir). [DEMO]');
+    window.open(
+      'https://www.google.com/maps/place//data=!4m2!3m1!1s0x14cac64c07925733:0x96ea14ba8be2cdb6?sa=X&ved=1t:8290&ictx=111',
+      '_blank',
+      'noopener,noreferrer'
+    );
+    setMapMessage('Google Haritalar yeni sekmede açıldı.');
     setTimeout(() => {
       setMapMessage(null);
     }, 4000);
@@ -31,10 +36,10 @@ export const LocationSection: React.FC = () => {
             id="location-title"
             className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-bplus-deepOlive tracking-tight mb-3"
           >
-            Kadıköy / İstanbul
+            Şişli / İstanbul
           </h2>
           <div className="inline-block px-3 py-1 rounded-full bg-bplus-latte/25 border border-bplus-latte text-xs font-bold text-bplus-deepOlive">
-            ÖRNEK LOKASYON — TBD EMPLOYER DATA REQUIRED
+            PİLOT ŞUBE — MECİDİYEKÖY BÜYÜKDERE CADDESİ
           </div>
         </div>
 
@@ -45,13 +50,13 @@ export const LocationSection: React.FC = () => {
             <div className="space-y-6">
               <div>
                 <div className="text-[11px] font-bold uppercase tracking-wider text-bplus-mutedText mb-1">
-                  Şube Adresi [DEMO ADDRESS]
+                  Şube Adresi
                 </div>
                 <div className="text-base font-bold text-bplus-deepOlive">
-                  Moda Caddesi No: 42, Kadıköy / İstanbul
+                  Mecidiyeköy Mahallesi, Büyükdere Cd., 34394 Şişli/İstanbul
                 </div>
                 <div className="text-xs text-bplus-mutedText mt-1.5 leading-relaxed">
-                  Onaylı şube adresi henüz paylaşılmamıştır. Kadıköy / Moda yalnızca demo lokasyon olarak kullanılmaktadır.
+                  M2 ve M7 Metro Hatları Mecidiyeköy İstasyonu ile Metrobüs durağına 2-3 dakika yürüme mesafesinde.
                 </div>
               </div>
 
@@ -91,7 +96,7 @@ export const LocationSection: React.FC = () => {
                 className="w-full py-3 rounded-full bg-bplus-deepOlive text-bplus-warmWhite font-bold text-xs hover:bg-bplus-olive transition-colors flex items-center justify-center gap-2 shadow-sm"
               >
                 <Navigation className="w-3.5 h-3.5" />
-                <span>Örnek Rotayı Gör</span>
+                <span>Google Haritalar&apos;da Aç</span>
               </button>
               {mapMessage && (
                 <div className="mt-2 text-center text-xs font-medium text-bplus-olive animate-fadeIn">
@@ -108,7 +113,7 @@ export const LocationSection: React.FC = () => {
                 Kroki Görünümü
               </div>
               <div className="text-xs text-bplus-mutedText">
-                Kadıköy Moda Örnek Sokak Yerleşimi (Stilize Vektör Tasarımı — Temsili)
+                Mecidiyeköy Mahallesi, Büyükdere Caddesi Konumu (Şişli / İstanbul)
               </div>
             </div>
 
@@ -142,12 +147,12 @@ export const LocationSection: React.FC = () => {
               {/* Map Floating Pin Tag */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-12 bg-bplus-deepOlive text-bplus-warmWhite px-3 py-1.5 rounded-lg shadow-card text-xs font-bold flex items-center gap-1.5 border border-bplus-latte pointer-events-none">
                 <MapPin className="w-3.5 h-3.5 text-bplus-latte" />
-                <span>B+ Moda (Örnek Şube / Demo)</span>
+                <span>B+ Mecidiyeköy Şubesi</span>
               </div>
             </div>
 
             <div className="text-[11px] text-bplus-mutedText text-center mt-4">
-              *Temsili haritadır. Gerçek konum işveren tarafından henüz paylaşılmamıştır.
+              Mecidiyeköy Mahallesi, Büyükdere Cd., 34394 Şişli/İstanbul
             </div>
           </div>
         </div>

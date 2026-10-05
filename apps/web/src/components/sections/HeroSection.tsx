@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
@@ -51,19 +52,19 @@ export const HeroSection: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto">
-              <a
-                href="#menu"
+              <Link
+                href="/menu"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-bplus-deepOlive text-bplus-warmWhite font-bold text-sm hover:bg-bplus-olive active:scale-[0.98] transition-all shadow-card"
               >
                 Menüyü Keşfet
                 <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#concept"
+              </Link>
+              <Link
+                href="/concept"
                 className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-bplus-deepOlive/80 text-bplus-deepOlive font-semibold text-sm hover:bg-bplus-warmWhite/80 transition-colors"
               >
                 Konsepti Gör
-              </a>
+              </Link>
             </div>
           </div>
 

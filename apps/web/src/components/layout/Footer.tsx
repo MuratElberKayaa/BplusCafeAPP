@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -18,9 +19,13 @@ export const Footer: React.FC = () => {
           {/* Brand Info (~5 cols) */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-bplus-sage text-bplus-deepOlive flex items-center justify-center font-bold text-base">
-                B+
-              </div>
+              <img
+                src="/images/demo/brand-logo.webp"
+                alt="B+ Logo"
+                width={36}
+                height={36}
+                className="w-9 h-9 rounded-full object-cover border border-bplus-sage/50"
+              />
               <span className="font-bold text-lg tracking-tight">
                 B+ Wellness Café
               </span>
@@ -40,29 +45,29 @@ export const Footer: React.FC = () => {
             </div>
             <ul className="space-y-2 text-xs text-bplus-warmWhite/80">
               <li>
-                <a href="#concept" className="hover:text-bplus-sage transition-colors">
-                  Konsept & Felsefe
-                </a>
+                <Link href="/concept" className="hover:text-bplus-sage transition-colors">
+                  Konsept &amp; Felsefe
+                </Link>
               </li>
               <li>
-                <a href="#menu" className="hover:text-bplus-sage transition-colors">
+                <Link href="/menu" className="hover:text-bplus-sage transition-colors">
                   Özenle Hazırlanmış Menü
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#ai-barista" className="hover:text-bplus-sage transition-colors">
+                <Link href="/#ai-barista" className="hover:text-bplus-sage transition-colors">
                   AI Barista Vitrini
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#location" className="hover:text-bplus-sage transition-colors">
-                  Şube & Çalışma Saatleri (Örnek)
-                </a>
+                <Link href="/location" className="hover:text-bplus-sage transition-colors">
+                  Şube &amp; Çalışma Saatleri (Örnek)
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-bplus-sage transition-colors">
-                  İletişim & Topluluk
-                </a>
+                <Link href="/contact" className="hover:text-bplus-sage transition-colors">
+                  İletişim &amp; Topluluk
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,7 +85,7 @@ export const Footer: React.FC = () => {
 
             <div className="text-[11px] text-bplus-cream/90 mt-6 md:mt-0 md:text-right">
               <div>İstanbul / Türkiye</div>
-              <div>Kadıköy Moda (Örnek Şube)</div>
+              <div>Mecidiyeköy, Şişli (Pilot Şube)</div>
             </div>
           </div>
         </div>

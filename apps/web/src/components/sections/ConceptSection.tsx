@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { CheckCircle2, Coffee, Feather, Zap } from 'lucide-react';
 
 export const ConceptSection: React.FC = () => {
@@ -91,13 +92,13 @@ export const ConceptSection: React.FC = () => {
               </div>
             </div>
 
-            <a
-              href="#menu"
+            <Link
+              href="/menu"
               className="inline-flex items-center gap-2 text-sm font-bold text-bplus-olive hover:text-bplus-deepOlive hover:underline transition-colors"
             >
               <span>Seçkin Menümüzü İnceleyin</span>
               <span>→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
